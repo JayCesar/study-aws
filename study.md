@@ -211,8 +211,8 @@ O ECS não baixa imagem do seu computador. Ele baixa do Amazon ECR (o "Docker Hu
 aws ecr create-repository --repository-name hospital-api --region us-east-1 
 
 ## comandos para mandar a img pro ecr
-aws ecr get-login-password --region <REGIAO> | docker login --username AWS --password-stdin <ID_DA_CONTA>.dkr.ecr.<REGIAO>.amazonaws.com
-docker build -t hospital-api .
-docker tag hospital-api:latest <ID_DA_CONTA>. dkr.ecr.<REGIAO>.amazonaws.com/hospital-api:latest
-docker push <ID_DA_CONTA>.dkr.ecr.<REGIAO>.amazonaws.com/hospital-api:latest
-aws ecs update-service --cluster hospital-cluster --service hospital-service --force-new-deployment
+aws ecr get-login-password --region <REGIAO> | docker login --username AWS --password-stdin <ID_DA_CONTA>.dkr.ecr.<REGIAO>.amazonaws.com  
+docker build -t hospital-api .  
+docker tag hospital-api:latest <ID_DA_CONTA>. dkr.ecr.<REGIAO>.amazonaws.com/hospital-api:latest  
+docker push <ID_DA_CONTA>.dkr.ecr.<REGIAO>.amazonaws.com/hospital-api:latest  
+aws ecs update-service --cluster hospital-cluster --service hospital-service --force-new-deployment  
